@@ -1,0 +1,23 @@
+MNIST Handwritten Recognition
+
+Introduction
+
+The task is to predict handwritten 10 digits (0 to 9). The image database is downloaded from MNIST, where 60,000 of images are used to train the model and 10,000 of images are used to test the model. The training was done in 7 epochs, and 150 batches, these were optimum number of epochs since it was within a reasonable computation time and gave good accuracy for the network. The results are presented as percentage accuracy score done on validation set.  
+
+MINIST is a database developed by Yann Lecun. Each image is 28 by 28 pixel square (784 pixels total). The MNIST data set is provided for easy use by Keras, Keras also provides an easier interface to the tensorflow backend that I used to train the network. 
+
+Process
+
+The first step is to download MNIST database in Keras and import useful Keras functions, 
+such as Sequential, Flatten, Dense, Dropouts. Then set a fixed random seed, such as 13. Next, load the MNIST dataset and reshape the images for training the CNN. For training two-dimensional convolutions, the dimensional values are set in a format like [pixel][width][height], where [pixel] = 1(Greyscale), [width] = 28, [height] = 28, [height] = 28. Before defining the convolutions models, normalize the input pixel values from 0-255 to 0-1 and one hot encode the output variables. 
+
+Convolutional neural networks consist of multi-layer perceptron. The more layers the program has, potentially more accurate the result can be (more layers allow more information to be captured). This program uses Convolutional layer, Pooling layer, Dropout layer, Flatten layer (CNN network).
+
+After generating the model, Softmax activation function is then used on the output layer to show the result in a probability-like value.
+
+Finally, run the model and print the accuracy score and save the model to JSON.
+
+Result
+
+The trained network has been saved in JSON file. The validated accuracy was above 93% on many different runs of the training script, the highest validated accuracy being about 96%.
+
